@@ -1,10 +1,9 @@
 import datetime
 import re
 
-from sqlalchemy import Column, Integer, ForeignKey, Unicode, DateTime, Boolean, \
-    Date
+from sqlalchemy import Column, Integer, ForeignKey, Unicode, Date
 from sqlalchemy.ext.declarative import as_declarative, declared_attr
-from sqlalchemy.orm import relationship, backref
+from sqlalchemy.orm import relationship
 
 
 @as_declarative()
@@ -44,6 +43,3 @@ class Student(Base):
 
     def __repr__(self):
         return f'<Student: {self.name} {self.surname} {self.patronymic}>'
-
-
-

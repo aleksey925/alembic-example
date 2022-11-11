@@ -1,5 +1,5 @@
-import os
+from pathlib import Path
 
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+BASE_DIR = Path(__file__).absolute().parent
 
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'app.db')
+SQLALCHEMY_DATABASE_URI = f'sqlite:///{BASE_DIR / "app.db"}'
